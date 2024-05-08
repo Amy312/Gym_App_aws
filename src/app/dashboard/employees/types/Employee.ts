@@ -1,5 +1,7 @@
 type Employee = {
-  employeename: string;
+  employeename?: string;
+  employeeFirstName?: string;
+  employeeLastName?: string;
   numero: string;
   cargo: string;
   id: Number

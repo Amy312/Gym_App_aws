@@ -75,7 +75,7 @@ const EmployeeFormEdit = ({ employeeData }: EmployeeProfileProps) => {
         <NameInput
           register={register}
           errors={errors}
-          value={employeeData.employeename}
+          value={employeeData.employeename!}
         />
         <ChargeInput register={register} value={employeeData.cargo} />
         <NumberInput
