@@ -29,10 +29,12 @@ const EmployeeForm = () => {
   const onSubmitForm = async (data: any) => {
     console.log(data);
     if (isCancel) {
+      const [employeeFirstName, employeeLastName] = data.name.split(' ');
       try {
         await executePost({
           data: {
-            employeename: data.name,
+            employeeFirstName: employeeFirstName,
+            employeeLastName: employeeLastName,
             cargo: data.charge,
             numero: data.contact,
           },

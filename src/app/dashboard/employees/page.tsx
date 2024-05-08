@@ -127,9 +127,13 @@ const EmployeePage = () => {
     setEmployeeToDelete(employee);
   };
   const sortByEmployeeName = (employees: Employee[]): Employee[] => {
+    console.log("estos es:", employees)
     return employees
-      .slice()
-      .sort((a, b) => a.employeename.localeCompare(b.employeename));
+      .map(employee => ({
+    ...employee,
+    employeename: `${employee.employeeFirstName} ${employee.employeeLastName}`
+  }))
+  .sort((a, b) => a.employeename.localeCompare(b.employeename));
   };
 
   const sortedEmployeesData = sortByEmployeeName(employeesData);

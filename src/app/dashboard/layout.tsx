@@ -8,12 +8,17 @@ interface LayoutProps {
 }
 
 const DashboardLayout: React.FC<LayoutProps> = ({ children }) => {
-  const { isLogged } = useAuth();
+  const { isLogged, login } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    if (!isLogged) {
+    
+    if (!isLogged && localStorage.getItem('isLogged')!="true") {
+      console.log("ni modo")
       router.push("/auth/login"); // Ajusta la ruta si tu página de login está en un lugar diferente
+
+    }{
+      login();
     }
   }, [isLogged, router]);
 

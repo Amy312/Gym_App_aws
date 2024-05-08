@@ -22,11 +22,11 @@ const LoginForm: React.FC = () => {
 
   const checkUser = (data: any) => {
     if (
-      data.email === "panque.sito@hotcake.com" &&
-      data.password === "ChantilinConHelado"
+      data.email === "admin@mail.com" &&
+      data.password === "admin123"
     ) {
-      router.push("/dashboard");
       login();
+      router.push("/dashboard");
     } else {
       setIncorrect(true);
     }
